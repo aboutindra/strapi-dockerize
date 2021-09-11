@@ -1,12 +1,11 @@
 FROM strapi/strapi
 LABEL maintainer="Muhammad Indrawan <me@indra.codes>"
-WORKDIR /opt/app
 
-COPY ./package.json ./
-COPY ./yarn.lock ./
+WORKDIR /app
+
+COPY / /app
 
 RUN yarn install
-COPY ./app .
 
 ENV NODE_ENV production
 
