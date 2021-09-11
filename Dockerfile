@@ -1,10 +1,9 @@
+FROM strapi/strapi
 LABEL maintainer="Muhammad Indrawan <me@indra.codes>"
-
-FROM strapi/base
 WORKDIR /opt/app
 
-COPY ./app/package.json ./
-COPY ./app/yarn.lock ./
+COPY ./package.json ./
+COPY ./yarn.lock ./
 
 RUN yarn install
 COPY ./app .
